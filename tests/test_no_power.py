@@ -16,4 +16,8 @@ def test_nono_number():
 
 
 def test_nono_tc_number():
-    assert 1 == power_nono_number(start=1000000000, end=1009999999)
+    s = 1000000000L
+    e = 1009999999L
+    print list(power(s, e))
+    assert [] == list(power(s, e))
+    assert False

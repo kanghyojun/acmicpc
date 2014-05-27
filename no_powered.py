@@ -3,6 +3,24 @@ from math import sqrt
 
 MAX = 1000000000000L
 
+def gen(n):
+    return n ** 2 + 4 * n + 4
+
+
+def gen_until(n):
+    i = 0
+    r = gen(i)
+    while r < n:
+        i += 1
+        r = gen(i)
+        if r < n:
+            yield r
+
+
+def no_power(start, end):
+    all = end - start + 1
+    return all
+
 
 def power(end, start=1):
     i = start

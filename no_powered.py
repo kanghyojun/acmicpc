@@ -48,6 +48,21 @@ def power_nono_number(end, start=1):
     return end - start - len(powered) + 1
 
 
+def prime(n):
+    from math import sqrt
+    i = 2
+    r = [1 for x in xrange(1, n + 2)]
+    while i <= sqrt(n):
+        if r[i] == 0:
+            continue
+        j = i + i
+        while j <= n:
+            r[j] = 0
+            j += i
+        i += 1
+    return r
+
+
 if __name__ == '__main__':
     inputs = raw_input()
     s, e = inputs.split(' ')

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from no_powered import power, powered_number, power_nono_number, gen, no_power
+from no_powered import (power, powered_number, power_nono_number, gen,
+                        no_power, prime)
 
 def test_get_powred():
     assert [4, 9] == list(power(10))
@@ -27,5 +28,11 @@ def test_gen():
     assert 4 == gen(0)
 
 
-def test_new_way():
-    assert 7 == no_power(1, 10)
+def test_prime():
+    assert [1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0] == prime(10)
+
+
+def test_time_prime():
+    import timeit
+    print timeit.timeit('prime(1)', setup='from no_powered import prime')
+    assert False

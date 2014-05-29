@@ -1,10 +1,21 @@
 # -*- coding: utf-8 -*-
+from array import array
 from math import sqrt
 
 MAX = 1000000000000L
 
 def gen(n):
     return n ** 2 + 4 * n + 4
+
+
+def all_powered(until):
+    num = until
+    for x in xrange(0, int(sqrt(until))):
+        p = x ** 2 + 4 * x + 4
+        num -= 1
+#         for y in xrange(1, (until / p) + 1):
+#             a.append(y * p)
+    return num
 
 
 def gen_until(n):

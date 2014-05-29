@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from no_powered import (power, powered_number, power_nono_number, gen,
-                        no_power, prime)
+                        no_power, prime, all_powered)
 
 def test_get_powred():
     assert [4, 9] == list(power(10))
@@ -20,8 +20,7 @@ def test_nono_tc_number():
     s = 1000000000L
     e = 1009999999L
     print list(power(s, e))
-    assert [] == list(power(s, e))
-    assert False
+    assert list(power(s, e))
 
 
 def test_gen():
@@ -32,7 +31,9 @@ def test_prime():
     assert [1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0] == prime(10)
 
 
-def test_time_prime():
-    import timeit
-    print timeit.timeit('prime(1)', setup='from no_powered import prime')
+def test_all_power():
+#     assert 4 in all_powered(10)
+#     assert 8 in all_powered(10)
+#     assert 9 in all_powered(10)
+    print all_powered(1000000000L)
     assert False
